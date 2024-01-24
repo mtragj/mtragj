@@ -49,7 +49,20 @@ format: frontpage
     </div><!-- /.row -->
 {% endif %}
 
+<!-- Image Carousel -->
+<div class="row">
+    <!-- <div class="medium-6 columns"> -->
+    <div class="image_container"></div>    
+        {% include carousel.html height="450" unit="px" duration="7" number="1" %}
+    </div>
+</div>
 
+<style>
+.image_container {
+    justify-content: center;
+    align-items: center;
+}
+</style>
 
 {% comment %}
 *

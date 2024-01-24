@@ -1,10 +1,21 @@
-- title: Start
+- title: Home
   url: "/"
   side: left
 
-- title: Getting Started
-  url: "/getting-started/"
+- title: About the MTRA
+  url: "/about/"
   side: left
+
+- title: Events
+  url: "/events/"
+  side: left
+  # dropdown:
+  # - title: "Blog Archive"
+  #   url: "/blog/archive/"  
+
+- title: News
+  url: "/news/"
+  side: left  
 
 - title: "Templates"
   url: "/design/"
@@ -59,16 +70,11 @@
   - title: "Roadmap"
     url: "/roadmap/"
 
-- title: Blog
-  url: "/blog/"
-  side: left
-  dropdown:
-  - title: "Blog Archive"
-    url: "/blog/archive/"
 
-- title: "Search"
-  url: "/search/"
-  side: right
+
+# - title: "Search"
+#   url: "/search/"
+#   side: right
 
 - title: "Contact"
   url: "/contact/"

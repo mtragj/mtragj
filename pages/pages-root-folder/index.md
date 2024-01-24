@@ -6,12 +6,12 @@
 #
 layout: frontpage
 header:
-  image_fullwidth: header_unsplash_12.jpg
+  image_fullwidth: bookcliffs_garfield_sunset_ktm.png
 widget1:
-  title: "Blog & Portfolio"
-  url: 'http://phlow.github.io/feeling-responsive/blog/'
-  image: widget-1-302x182.jpg
-  text: 'Every good portfolio website has a blog with fresh news, thoughts and develop&shy;ments of your activities. <em>Feeling Responsive</em> offers you a fully functional blog with an archive page to give readers a quick overview of all your posts.'
+  title: "About the MTRA"
+  url: '/about/'
+  image: cropped-MTRA-logo-transparent-1_271_271.png
+  text: 'Motorcycle Trail Riding Association (MTRA) is a nonprofit organization governed by a volunteer board of directors representing Western Slope dirt bikers. We are funded through annual membership fees, donations, and grants.'
 widget2:
   title: "Why use this theme?"
   url: 'http://phlow.github.io/feeling-responsive/info/'
@@ -33,8 +33,8 @@ widget3:
 # To change colors see sass/_01_settings_colors.scss
 #
 callforaction:
-  url: https://tinyletter.com/feeling-responsive
-  text: Inform me about new updates and features ›
+  url: https://forms.gle/tA77sVKiLEMGxnZ76
+  text: Become a member of the MTRA ›
   style: alert
 permalink: /index.html
 #
@@ -42,11 +42,16 @@ permalink: /index.html
 # this page as active in the topbar navigation
 #
 homepage: true
+
+carousels:
+  - images: 
+    - image: images/20231221_155601.jpg # images/cropped-MTRA-logo-transparent-1_182_182.png
+    - image: images/20231231_131824.jpg # images/cropped-MTRA-logo-transparent-1_271_271.png
 ---
 
-<div id="videoModal" class="reveal-modal large" data-reveal="">
+<!-- <div id="videoModal" class="reveal-modal large" data-reveal="">
   <div class="flex-video widescreen vimeo" style="display: block;">
     <iframe width="1280" height="720" src="https://www.youtube.com/embed/3b5zCFSmVvU" frameborder="0" allowfullscreen></iframe>
   </div>
   <a class="close-reveal-modal">&#215;</a>
-</div>
+</div> -->
