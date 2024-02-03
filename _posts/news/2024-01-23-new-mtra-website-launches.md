@@ -13,7 +13,7 @@ categories:
 show_meta: false    
 image:
     thumb: www_clipart.jpg
-    homepage: www_clipart.jpg
+    homepage: www_clipart_450_320.jpg
     title: www_clipart.jpg
     # caption: Edgewater
     # caption_url: https://www.kannahcreekbrewingco.com/edgewater

@@ -15,7 +15,11 @@
 
 - title: News
   url: "/news/"
-  side: left  
+  side: left
+
+- title: Vendors
+  url: "/vendors/"
+  side: left
 
 - title: "Templates"
   url: "/design/"
