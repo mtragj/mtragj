@@ -45,8 +45,9 @@ homepage: true
 
 carousels:
   - images: 
-    - image: images/20231221_155601.jpg # images/cropped-MTRA-logo-transparent-1_182_182.png
-    - image: images/20231231_131824.jpg # images/cropped-MTRA-logo-transparent-1_271_271.png
+    - image: images/20231221_155601_cropped.jpg # images/cropped-MTRA-logo-transparent-1_182_182.png
+    - image: images/20231231_131824_cropped.jpg # images/cropped-MTRA-logo-transparent-1_271_271.png
+    - image: images/PXL_20231218_213217504_cropped.jpg # images/cropped-MTRA-logo-transparent-1_271_271.png
 ---
 
 <!-- <div id="videoModal" class="reveal-modal large" data-reveal="">
