@@ -17,6 +17,10 @@
   url: "/news/"
   side: left
 
+- title: Rides
+  url: "/rides/"
+  side: left  
+
 - title: Vendors
   url: "/vendors/"
   side: left
