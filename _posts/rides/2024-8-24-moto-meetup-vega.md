@@ -11,7 +11,7 @@ categories:
     - rides
 show_meta: false    
 image:
-    thumb: nvega_silver_spruce_aspens_300x255.jpg
+    thumb: vega_silver_spruce_aspens_300x255.jpg
     homepage: vega_silver_spruce_aspens_1024x768.jpg
     title: vega_silver_spruce_aspens_1024x768.jpg
     caption: Silver Spruce Trail
