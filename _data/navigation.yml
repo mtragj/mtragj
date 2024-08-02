@@ -9,6 +9,10 @@
 - title: Events
   url: "/events/"
   side: left
+
+- title: Volunteer
+  url: "/volunteer/"
+  side: left
   # dropdown:
   # - title: "Blog Archive"
   #   url: "/blog/archive/"  
