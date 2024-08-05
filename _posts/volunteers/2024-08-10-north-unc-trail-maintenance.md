@@ -11,10 +11,10 @@ categories:
     - volunteers
 show_meta: false    
 image:
-    thumb: 18rd_desert_wide_300x255.jpg
-    homepage: 18rd_desert_wide_1024x768.jpg
-    title: 18rd_desert_wide_1024x768.jpg
-    caption: 18 Rd
+    thumb: upper_bench_trail_work_300x400.jpg
+    homepage: upper_bench_trail_work_1024x1365.jpg
+    title: upper_bench_trail_work_1024x1365.jpg
+    caption: Upper Bench
     # caption_url: https://www.kannahcreekbrewingco.com/edgewater
 volunteer:
     when: 9am Aug 10th, 2024
