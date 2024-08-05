@@ -17,7 +17,7 @@ image:
     caption: 18 Rd
     # caption_url: https://www.kannahcreekbrewingco.com/edgewater
 volunteer:
-    when: 9am Aug 11th, 2024
+    when: 9am Aug 10th, 2024
     where: Intersection of Divide Road / FS 402 and FS 411  
     leader: Chris Vestal
     work: Building trail bridges
