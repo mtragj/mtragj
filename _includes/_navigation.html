@@ -57,6 +57,7 @@
 
                       {% if dropdown_link.url contains 'http' %}
                         {% assign domain = '' %}
+                        {% assign _baseurl = '' %}
                         {% else %}
                         {% assign domain = site.url %}
                       {% endif %}
@@ -119,6 +120,7 @@
 
                       {% if dropdown_link.url contains 'http' %}
                         {% assign domain = '' %}
+                        {% assign _baseurl = '' %}
                         {% else %}
                         {% assign domain = site.url %}
                       {% endif %}

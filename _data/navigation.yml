@@ -13,9 +13,9 @@
 - title: Volunteer
   url: "/volunteer/"
   side: left
-  # dropdown:
-  # - title: "Blog Archive"
-  #   url: "/blog/archive/"  
+  dropdown:
+  - title: "Log Hours"
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSfBN1EGAMGyWHngUZq7tal2EMLzIZejNiEJyKooNXWaymBXGw/viewform"  
 
 - title: News
   url: "/news/"
