@@ -39,6 +39,6 @@ Details will be relayed Saturday by Chris Vestal per USFS.
 We will ride motos out from our meeting point on FS 402 (Divide Road)
 
 
-If you can volunteer, please RSVP to mtrawestco@gmail.com no later than 9am Saturday.  Follow up email  will be sent Saturday afternoon with meet details to those who RSVP. 
+If you can volunteer, please RSVP to mtrawestco@gmail.com no later than 12pm Friday the 9th.  Follow up email will be sent Friday afternoon with meet details to those who RSVP. 
 
 ![Trailwork Meeting point map]({{ site.urlimg }}/trail_work_day_meet_upper_bench_1024x806.jpg)
