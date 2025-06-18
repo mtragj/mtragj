@@ -10,7 +10,7 @@ header:
 widget1:
   title: "About the MTRA"
   url: '/about/'
-  image: cropped-MTRA-logo-transparent-1_271_271.png
+  image: mtra_logo_new_271_221.png
   text: 'Motorcycle Trail Riding Association (MTRA) is a nonprofit organization governed by a volunteer board of directors representing Western Slope dirt bikers. We are funded through annual membership fees, donations, and grants.'
 # widget2:
 #   title: "Why use this theme?"
@@ -46,8 +46,8 @@ homepage: true
 # carousels:
 #   - images: 
 #     - image: images/20231221_155601_cropped.jpg # images/cropped-MTRA-logo-transparent-1_182_182.png
-#     - image: images/20231231_131824_cropped.jpg # images/cropped-MTRA-logo-transparent-1_271_271.png
-#     - image: images/PXL_20231218_213217504_cropped.jpg # images/cropped-MTRA-logo-transparent-1_271_271.png
+#     - image: images/20231231_131824_cropped.jpg # images/mtra_logo_new_271_221.png
+#     - image: images/PXL_20231218_213217504_cropped.jpg # images/mtra_logo_new_271_221.png
 ---
 
 <!-- <div id="videoModal" class="reveal-modal large" data-reveal="">
