@@ -12,10 +12,11 @@ widget1:
   url: '/about/'
   image: mtra_logo_new_271_221.png
   text: 'Motorcycle Trail Riding Association (MTRA) is a nonprofit organization governed by a volunteer board of directors representing Western Slope dirt bikers. We are funded through annual membership fees, donations, and grants.'
-# widget2:
-#   title: "Why use this theme?"
-#   url: 'http://phlow.github.io/feeling-responsive/info/'
-#   text: '<em>Feeling Responsive</em> is heavily customizable.<br/>1. Language-Support :)<br/>2. Optimized for speed and it&#39;s responsive.<br/>3. Built on <a href="http://foundation.zurb.com/">Foundation Framework</a>.<br/>4. Seven different Headers.<br/>5. Customizable navigation, footer,...'
+widget2:
+  title: "Ride with Us!"
+  url: '/rides/'
+  image: gvdbr_logo_271_168.png
+  text: '<b>October 24th - 26th, 2025</b><br> Come ride with us at the first Grand Valley Dirt Bike Rally, put on by the MTRA! We will have an event area with vendors and activities at the Moto Track and be riding 3 different areas with a variety of lengths and difficulty.'
 #   video: '<a href="#" data-reveal-id="videoModal"><img src="http://phlow.github.io/feeling-responsive/images/start-video-feeling-responsive-302x182.jpg" width="302" height="182" alt=""/></a>'
 widget3:
   title: "Ride with Us!"
