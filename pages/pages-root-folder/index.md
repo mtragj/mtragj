@@ -14,13 +14,13 @@ widget1:
   text: 'Motorcycle Trail Riding Association (MTRA) is a nonprofit organization governed by a volunteer board of directors representing Western Slope dirt bikers. We are funded through annual membership fees, donations, and grants.'
 widget2:
   title: "Ride with Us!"
-  url: '/rides/'
+  url: 'https://grandvalleydirtbikerally.com'
   image: gvdbr_logo_271_168.png
-  text: '<b>October 24th - 26th, 2025</b><br> Come ride with us at the first Grand Valley Dirt Bike Rally, put on by the MTRA! We will have an event area with vendors and activities at the Moto Track and be riding 3 different areas with a variety of lengths and difficulty.'
+  text: '<b>October 24th - 26th, 2025</b><br> Come ride with us at the first Grand Valley Dirt Bike Rally, put on by the MTRA! We will have an event area with vendors and activities at the Moto Track and have guided rides in 3 different areas with a variety of lengths and difficulty.'
 #   video: '<a href="#" data-reveal-id="videoModal"><img src="http://phlow.github.io/feeling-responsive/images/start-video-feeling-responsive-302x182.jpg" width="302" height="182" alt=""/></a>'
 widget3:
   title: "Ride with Us!"
-  url: 'https://mtragj.org/rides/'
+  url: '/rides/'
   image: mtra_motomeetup_270x323.jpg
   text: 'Come ride with us at regulary scheduled meetups where we''ll explore local trails and riding areas and provide the opportunity to meet other local riders.'
 #
