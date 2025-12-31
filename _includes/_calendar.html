@@ -1,0 +1,180 @@
+{% comment %}
+Calendar view for events, rides, and volunteer opportunities.
+Uses post.date for calendar positioning and displays thumbnails.
+Shows upcoming events first, then past events.
+{% endcomment %}
+
+{% assign all_posts = site.categories.events | concat: site.categories.rides | concat: site.categories.volunteers %}
+{% assign sorted_posts = all_posts | sort: 'date' | reverse %}
+
+{% assign today = 'now' | date: '%Y-%m-%d' %}
+
+{% comment %} Separate upcoming and past posts {% endcomment %}
+{% assign upcoming_posts = "" | split: "" %}
+{% assign past_posts = "" | split: "" %}
+
+{% for post in sorted_posts %}
+  {% assign post_date = post.date | date: '%Y-%m-%d' %}
+  {% if post_date >= today %}
+    {% assign upcoming_posts = upcoming_posts | push: post %}
+  {% else %}
+    {% assign past_posts = past_posts | push: post %}
+  {% endif %}
+{% endfor %}
+
+{% assign upcoming_posts = upcoming_posts | reverse %}
+
+<div class="calendar-container">
+
+  {% comment %} Upcoming Events Section {% endcomment %}
+  {% if upcoming_posts.size > 0 %}
+    <h2 class="calendar-section-header">Upcoming</h2>
+
+    {% assign displayed_months = "" %}
+
+    {% for post in upcoming_posts %}
+      {% assign post_month_key = post.date | date: '%Y-%m' %}
+      {% assign post_day = post.date | date: '%-d' %}
+
+      {% comment %} Check if we need a new month header {% endcomment %}
+      {% unless displayed_months contains post_month_key %}
+        {% if displayed_months != "" %}
+          </div><!-- /.calendar-grid -->
+        {% endif %}
+
+        <h3 class="calendar-month-header">{{ post.date | date: '%B %Y' }}</h3>
+        <div class="calendar-grid">
+
+        {% capture displayed_months %}{{ displayed_months }}{{ post_month_key }},{% endcapture %}
+      {% endunless %}
+
+      {% comment %} Determine the category type for styling {% endcomment %}
+      {% if post.categories contains 'events' %}
+        {% assign post_type = 'event' %}
+        {% assign type_label = 'Event' %}
+      {% elsif post.categories contains 'rides' %}
+        {% assign post_type = 'ride' %}
+        {% assign type_label = 'Ride' %}
+      {% elsif post.categories contains 'volunteers' %}
+        {% assign post_type = 'volunteer' %}
+        {% assign type_label = 'Volunteer' %}
+      {% else %}
+        {% assign post_type = 'other' %}
+        {% assign type_label = 'Post' %}
+      {% endif %}
+
+      <div class="calendar-item calendar-{{ post_type }}">
+        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+          <div class="calendar-date">
+            <span class="calendar-day">{{ post_day }}</span>
+            <span class="calendar-weekday">{{ post.date | date: '%a' }}</span>
+          </div>
+          <div class="calendar-content">
+            {% if post.image.thumb %}
+              <div class="calendar-thumb">
+                <img src="{{ site.urlimg }}{{ post.image.thumb }}" alt="{{ post.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="calendar-info">
+              <span class="calendar-type-badge calendar-badge-{{ post_type }}">{{ type_label }}</span>
+              <h4 class="calendar-title">{{ post.title }}</h4>
+              {% if post.event.when %}
+                <p class="calendar-when">{{ post.event.when }}</p>
+              {% elsif post.ride.when %}
+                <p class="calendar-when">{{ post.ride.when }}</p>
+              {% elsif post.volunteer.when %}
+                <p class="calendar-when">{{ post.volunteer.when }}</p>
+              {% endif %}
+              {% if post.teaser %}
+                <p class="calendar-teaser">{{ post.teaser }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+    {% if displayed_months != "" %}
+      </div><!-- /.calendar-grid -->
+    {% endif %}
+  {% else %}
+    <p class="calendar-empty">No upcoming events, rides, or volunteer opportunities scheduled. Check back soon!</p>
+  {% endif %}
+
+  {% comment %} Past Events Section {% endcomment %}
+  {% if past_posts.size > 0 %}
+    <h2 class="calendar-section-header calendar-past-header">Past Events</h2>
+
+    {% assign displayed_months = "" %}
+
+    {% for post in past_posts %}
+      {% assign post_month_key = post.date | date: '%Y-%m' %}
+      {% assign post_day = post.date | date: '%-d' %}
+
+      {% comment %} Check if we need a new month header {% endcomment %}
+      {% unless displayed_months contains post_month_key %}
+        {% if displayed_months != "" %}
+          </div><!-- /.calendar-grid -->
+        {% endif %}
+
+        <h3 class="calendar-month-header">{{ post.date | date: '%B %Y' }}</h3>
+        <div class="calendar-grid">
+
+        {% capture displayed_months %}{{ displayed_months }}{{ post_month_key }},{% endcapture %}
+      {% endunless %}
+
+      {% comment %} Determine the category type for styling {% endcomment %}
+      {% if post.categories contains 'events' %}
+        {% assign post_type = 'event' %}
+        {% assign type_label = 'Event' %}
+      {% elsif post.categories contains 'rides' %}
+        {% assign post_type = 'ride' %}
+        {% assign type_label = 'Ride' %}
+      {% elsif post.categories contains 'volunteers' %}
+        {% assign post_type = 'volunteer' %}
+        {% assign type_label = 'Volunteer' %}
+      {% else %}
+        {% assign post_type = 'other' %}
+        {% assign type_label = 'Post' %}
+      {% endif %}
+
+      <div class="calendar-item calendar-{{ post_type }} calendar-past">
+        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+          <div class="calendar-date">
+            <span class="calendar-day">{{ post_day }}</span>
+            <span class="calendar-weekday">{{ post.date | date: '%a' }}</span>
+          </div>
+          <div class="calendar-content">
+            {% if post.image.thumb %}
+              <div class="calendar-thumb">
+                <img src="{{ site.urlimg }}{{ post.image.thumb }}" alt="{{ post.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="calendar-info">
+              <span class="calendar-type-badge calendar-badge-{{ post_type }}">{{ type_label }}</span>
+              <h4 class="calendar-title">{{ post.title }}</h4>
+              {% if post.event.when %}
+                <p class="calendar-when">{{ post.event.when }}</p>
+              {% elsif post.ride.when %}
+                <p class="calendar-when">{{ post.ride.when }}</p>
+              {% elsif post.volunteer.when %}
+                <p class="calendar-when">{{ post.volunteer.when }}</p>
+              {% endif %}
+              {% if post.teaser %}
+                <p class="calendar-teaser">{{ post.teaser }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+    {% if displayed_months != "" %}
+      </div><!-- /.calendar-grid -->
+    {% endif %}
+  {% endif %}
+
+  {% if upcoming_posts.size == 0 and past_posts.size == 0 %}
+    <p class="calendar-empty">No events, rides, or volunteer opportunities found.</p>
+  {% endif %}
+</div>
