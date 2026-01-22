@@ -1,0 +1,15 @@
+name: Nightly Site Rebuild
+
+on:
+  schedule:
+    # 9:00 PM Mountain Standard Time (MST) = 4:00 AM UTC
+    # Note: During daylight saving time (MDT), this runs at 10:00 PM local time
+    - cron: '0 4 * * *'
+
+jobs:
+  rebuild:
+    uses: ./.github/workflows/jekyll.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
