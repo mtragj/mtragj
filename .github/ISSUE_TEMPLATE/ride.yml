@@ -1,0 +1,141 @@
+name: Ride
+description: Create an MTRA group ride post
+title: "[Ride] "
+labels: ["content", "ride"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Ride Post
+        Fill out the details below to create a new group ride post for the MTRA website.
+
+  - type: input
+    id: title
+    attributes:
+      label: Ride Title
+      description: The main title for the ride
+      placeholder: "18 Road Ride"
+    validations:
+      required: true
+
+  - type: input
+    id: subheadline
+    attributes:
+      label: Subheadline
+      description: Short descriptor shown above the title
+      placeholder: "Moto Meetup"
+    validations:
+      required: true
+
+  - type: textarea
+    id: teaser
+    attributes:
+      label: Teaser
+      description: Brief description of the ride (1-2 sentences)
+      placeholder: "Join us for a fun day exploring the trails at 18 Road."
+    validations:
+      required: true
+
+  - type: input
+    id: when
+    attributes:
+      label: When
+      description: Date and time of the ride
+      placeholder: "10am May 25th, 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Meeting location
+      placeholder: "18 Rd OHV Parking Area"
+    validations:
+      required: true
+
+  - type: input
+    id: leader
+    attributes:
+      label: Ride Leader
+      description: Who is leading this ride
+      placeholder: "Dave Clapp"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      description: Overall difficulty level
+      options:
+        - Beginner
+        - Beginner-Intermediate
+        - Intermediate
+        - Intermediate-Advanced
+        - Advanced
+    validations:
+      required: true
+
+  - type: input
+    id: distance
+    attributes:
+      label: Distance
+      description: Approximate ride distance
+      placeholder: "30-40 Miles"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: pace
+    attributes:
+      label: Pace
+      description: Expected riding pace
+      options:
+        - Easy
+        - Moderate
+        - Fast
+        - Varied
+    validations:
+      required: true
+
+  - type: input
+    id: terrain
+    attributes:
+      label: Terrain
+      description: Description of terrain types
+      placeholder: "Single-track, hills, gullies, varied"
+    validations:
+      required: true
+
+  - type: input
+    id: directions
+    attributes:
+      label: Directions Link
+      description: Google Maps or other directions URL
+      placeholder: "https://maps.app.goo.gl/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: body_content
+    attributes:
+      label: Ride Details
+      description: Additional content for the ride post (markdown supported)
+      placeholder: |
+        Add any additional details about the ride here...
+
+        - What to bring
+        - Special considerations
+        - Route highlights
+    validations:
+      required: false
+
+  - type: textarea
+    id: image
+    attributes:
+      label: Ride Image
+      description: Drag and drop or paste an image here. This will be resized to thumbnail (300x225) and full size (1024x768).
+      placeholder: "Drag and drop an image here..."
+    validations:
+      required: true
