@@ -141,8 +141,27 @@ Two types of includes:
 ## Git Workflow
 
 - **Main branch**: `gh-pages` (used for GitHub Pages deployment and PRs)
-- **Current branch**: Feature branches typically prefixed with `minor/` (e.g., `minor/biks_coffee_event`)
+- **Feature branches**: Prefixed with `minor/` (e.g., `minor/ride-grand-mesa-2026`)
 - Site automatically deploys from `gh-pages` branch
+- **Always create a new branch for changes**, push, and create a PR - never commit directly to gh-pages
+
+## Content Creation Guidelines
+
+### Creating Posts from GitHub Issues
+
+GitHub issue templates exist for creating events, rides, volunteers, and news posts. When creating posts from issues:
+1. Download and resize the attached image to both sizes (300x225 thumbnail and 1024x768 full)
+2. Create the post file with proper front matter matching the issue fields
+3. Create a new branch, commit, push, and create a PR
+
+### Standard Text for Ride Posts
+
+Always append this reminder to ride posts unless the issue content already includes similar text:
+
+```
+Reminder that all Rides require signing a liability waiver, parents signatures are required for riders under 18.
+Additionally, protective gear is required including helmet, goggles, gloves, and over the ankle boots.
+```
 
 ## Key Customizations
 
