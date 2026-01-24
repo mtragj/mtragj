@@ -1,0 +1,105 @@
+name: Event
+description: Create an MTRA event or meeting post
+title: "[Event] "
+labels: ["content", "event"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Event Post
+        Fill out the details below to create a new event post for the MTRA website.
+
+  - type: input
+    id: title
+    attributes:
+      label: Event Title
+      description: The main title for the event
+      placeholder: "MTRA Summer Meeting 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: subheadline
+    attributes:
+      label: Subheadline
+      description: Short descriptor shown above the title
+      placeholder: "Meeting"
+    validations:
+      required: true
+
+  - type: textarea
+    id: teaser
+    attributes:
+      label: Teaser
+      description: Brief description of the event (1-2 sentences)
+      placeholder: "Join us for our quarterly meeting to discuss upcoming rides and trail projects."
+    validations:
+      required: true
+
+  - type: input
+    id: when
+    attributes:
+      label: When
+      description: Date and time of the event
+      placeholder: "6pm July 31st, 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Location name
+      placeholder: "Edgewater Brewery"
+    validations:
+      required: true
+
+  - type: input
+    id: what
+    attributes:
+      label: What
+      description: Type of event
+      placeholder: "MTRA Meeting"
+    validations:
+      required: true
+
+  - type: input
+    id: who
+    attributes:
+      label: Who
+      description: Who should attend
+      placeholder: "MTRA members, prospective members"
+    validations:
+      required: true
+
+  - type: input
+    id: directions
+    attributes:
+      label: Directions Link
+      description: Google Maps or other directions URL
+      placeholder: "https://maps.app.goo.gl/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: body_content
+    attributes:
+      label: Event Details
+      description: Additional content for the event post (markdown supported)
+      placeholder: |
+        Add any additional details about the event here...
+
+        - Agenda items
+        - Special guests
+        - What to bring
+    validations:
+      required: false
+
+  - type: textarea
+    id: image
+    attributes:
+      label: Event Image
+      description: Drag and drop or paste an image here. This will be resized to thumbnail (300x225) and full size (1024x768).
+      placeholder: "Drag and drop an image here..."
+    validations:
+      required: true

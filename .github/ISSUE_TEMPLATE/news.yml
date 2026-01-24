@@ -1,0 +1,62 @@
+name: News Post
+description: Create an MTRA news or announcement post
+title: "[News] "
+labels: ["content", "news"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New News Post
+        Fill out the details below to create a new news post or announcement for the MTRA website.
+
+  - type: input
+    id: title
+    attributes:
+      label: Post Title
+      description: The main title for the news post
+      placeholder: "MTRA Receives Trail Grant"
+    validations:
+      required: true
+
+  - type: input
+    id: subheadline
+    attributes:
+      label: Subheadline
+      description: Short descriptor shown above the title
+      placeholder: "Announcement"
+    validations:
+      required: true
+
+  - type: textarea
+    id: teaser
+    attributes:
+      label: Teaser
+      description: Brief summary for listings and previews (1-2 sentences)
+      placeholder: "Exciting news about our latest trail project funding."
+    validations:
+      required: true
+
+  - type: textarea
+    id: body_content
+    attributes:
+      label: Post Content
+      description: The main content of the news post (markdown supported)
+      placeholder: |
+        Write your news post content here...
+
+        You can use markdown formatting:
+        - **Bold text**
+        - *Italic text*
+        - [Links](https://example.com)
+        - Lists and headers
+    validations:
+      required: true
+
+  - type: textarea
+    id: image
+    attributes:
+      label: Post Image
+      description: Drag and drop or paste an image here. This will be resized to thumbnail (300x225) and full size (1024x768).
+      placeholder: "Drag and drop an image here..."
+    validations:
+      required: true

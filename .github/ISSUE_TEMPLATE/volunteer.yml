@@ -1,0 +1,127 @@
+name: Volunteer
+description: Create an MTRA volunteer opportunity post
+title: "[Volunteer] "
+labels: ["content", "volunteer"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## New Volunteer Opportunity Post
+        Fill out the details below to create a new volunteer/trail maintenance post for the MTRA website.
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The main title for the volunteer opportunity
+      placeholder: "North Unc Trail Maintenance"
+    validations:
+      required: true
+
+  - type: input
+    id: subheadline
+    attributes:
+      label: Subheadline
+      description: Short descriptor shown above the title
+      placeholder: "Volunteer Opportunity"
+    validations:
+      required: true
+
+  - type: textarea
+    id: teaser
+    attributes:
+      label: Teaser
+      description: Brief description of the volunteer opportunity (1-2 sentences)
+      placeholder: "Help us maintain the trails and keep them rideable for everyone."
+    validations:
+      required: true
+
+  - type: input
+    id: when
+    attributes:
+      label: When
+      description: Date and time
+      placeholder: "9am Aug 10th, 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Meeting location
+      placeholder: "North Unc Trailhead"
+    validations:
+      required: true
+
+  - type: input
+    id: leader
+    attributes:
+      label: Work Leader
+      description: Who is leading this volunteer effort
+      placeholder: "Chris Vestal"
+    validations:
+      required: true
+
+  - type: input
+    id: work
+    attributes:
+      label: Work Description
+      description: What type of work will be done
+      placeholder: "Building trail bridges"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access
+    attributes:
+      label: Access
+      description: How to access the work site
+      options:
+        - Drive In
+        - Ride In
+        - Hike In
+        - Shuttle Provided
+    validations:
+      required: true
+
+  - type: input
+    id: bring
+    attributes:
+      label: What to Bring
+      description: Tools or supplies volunteers should bring
+      placeholder: "Hand saws, loppers, battery powered trimmer"
+    validations:
+      required: false
+
+  - type: input
+    id: directions
+    attributes:
+      label: Directions Link
+      description: Google Maps or other directions URL
+      placeholder: "https://maps.app.goo.gl/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: body_content
+    attributes:
+      label: Additional Details
+      description: Additional content for the volunteer post (markdown supported)
+      placeholder: |
+        Add any additional details here...
+
+        - Specific tasks
+        - Lunch/refreshments provided?
+        - Expected duration
+    validations:
+      required: false
+
+  - type: textarea
+    id: image
+    attributes:
+      label: Volunteer Image
+      description: Drag and drop or paste an image here. This will be resized to thumbnail (300x225) and full size (1024x768).
+      placeholder: "Drag and drop an image here..."
+    validations:
+      required: true
