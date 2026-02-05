@@ -23,7 +23,7 @@ volunteer:
     work: Trail Clearing and Brushing
     access: Ride In
     bring: Hand saws, loppers, battery powered trimmer. Packable shovels.
-    directions: https://maps.app.goo.gl/5gDuQcAAvrm4TjZL6
+    directions: https://www.google.com/maps/place/38%C2%B033'07.9%22N+108%C2%B038'45.1%22W/@38.552191,-108.645851,1382m/
 ---
 An opportunity to improve a trail on the North Unc.
 

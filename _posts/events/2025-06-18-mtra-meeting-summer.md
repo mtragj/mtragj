@@ -18,7 +18,7 @@ image:
     caption_url: https://smokinoakpizza.com/clifton-co.html
 event:
     when: 6pm June 18th, 2025
-    where: Smokin Oak
+    where: Smokin Oak - Clifton
     what: MTRA Meeting
     who: MTRA members, prospective members, and family/friends
     directions: https://maps.app.goo.gl/roFxAfb4oUaJ2vfWA
