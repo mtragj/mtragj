@@ -11,7 +11,31 @@
 		</ul>
 	</div>
 
-  <!-- <img class="b30" src="{{ site.urlimg }}/mtra-motomeetup_612x792.jpg" alt=""> -->
+	{% if page.volunteer.directions %}
+	{% comment %}Extract coordinates from full Google Maps URLs, or fall back to where field{% endcomment %}
+	{% if page.volunteer.directions contains '/@' %}
+		{% assign coords_part = page.volunteer.directions | split: '/@' | last | split: '/' | first %}
+		{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
+		{% assign map_query = coords_array[0] | strip | append: ',' | append: coords_array[1] %}
+	{% elsif page.volunteer.directions contains '/search/' %}
+		{% assign coords_part = page.volunteer.directions | split: '/search/' | last | split: '?' | first %}
+		{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
+		{% assign map_query = coords_array[0] | strip | append: ',' | append: coords_array[1] %}
+	{% else %}
+		{% assign map_query = page.volunteer.where | url_encode %}
+	{% endif %}
+	<div class="b30">
+		<iframe
+			width="300"
+			height="300"
+			style="border:0; border-radius:3px;"
+			loading="lazy"
+			allowfullscreen
+			referrerpolicy="no-referrer-when-downgrade"
+			src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q={{ map_query }}&zoom=14">
+		</iframe>
+	</div>
+	{% endif %>
 
 
 	<div class="border-dotted radius b30">
