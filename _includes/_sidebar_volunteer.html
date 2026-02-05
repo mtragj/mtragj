@@ -12,17 +12,17 @@
 	</div>
 
 	{% if page.volunteer.directions %}
-	{% comment %}Extract coordinates from full Google Maps URLs, or fall back to where field{% endcomment %}
 	{% if page.volunteer.directions contains '/@' %}
 		{% assign coords_part = page.volunteer.directions | split: '/@' | last | split: '/' | first %}
-		{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
-		{% assign map_query = coords_array[0] | strip | append: ',' | append: coords_array[1] %}
 	{% elsif page.volunteer.directions contains '/search/' %}
 		{% assign coords_part = page.volunteer.directions | split: '/search/' | last | split: '?' | first %}
-		{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
-		{% assign map_query = coords_array[0] | strip | append: ',' | append: coords_array[1] %}
 	{% else %}
-		{% assign map_query = page.volunteer.where | url_encode %}
+		{% assign coords_part = page.volunteer.where %}
+	{% endif %}
+	{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
+	{% assign map_query = coords_array[0] | default: coords_part %}
+	{% if coords_array.size > 1 %}
+		{% assign map_query = coords_array[0] | append: ',' | append: coords_array[1] %}
 	{% endif %}
 	<div class="b30">
 		<iframe
@@ -35,7 +35,7 @@
 			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQCDC7v-pRLTW4HIGl6wCEt8yGFaDEOXo&q={{ map_query }}&zoom=14">
 		</iframe>
 	</div>
-	{% endif %>
+	{% endif %}
 
 
 	<div class="border-dotted radius b30">

@@ -10,17 +10,17 @@
 	</div>
 
 	{% if page.event.directions %}
-	{% comment %}Extract coordinates from full Google Maps URLs, or fall back to where field{% endcomment %}
 	{% if page.event.directions contains '/@' %}
 		{% assign coords_part = page.event.directions | split: '/@' | last | split: '/' | first %}
-		{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
-		{% assign map_query = coords_array[0] | strip | append: ',' | append: coords_array[1] %}
 	{% elsif page.event.directions contains '/search/' %}
 		{% assign coords_part = page.event.directions | split: '/search/' | last | split: '?' | first %}
-		{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
-		{% assign map_query = coords_array[0] | strip | append: ',' | append: coords_array[1] %}
 	{% else %}
-		{% assign map_query = page.event.where | url_encode %}
+		{% assign coords_part = page.event.where %}
+	{% endif %}
+	{% assign coords_array = coords_part | replace: '+', '' | split: ',' %}
+	{% assign map_query = coords_array[0] | default: coords_part %}
+	{% if coords_array.size > 1 %}
+		{% assign map_query = coords_array[0] | append: ',' | append: coords_array[1] %}
 	{% endif %}
 	<div class="b30">
 		<iframe
