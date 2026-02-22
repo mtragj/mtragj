@@ -83,6 +83,10 @@ format: frontpage
 {% endfor %}
 {% assign upcoming_posts = upcoming_posts | reverse %}
 
+{% if upcoming_posts == empty %}
+  {% assign upcoming_posts = sorted_posts | slice: 0, 1 %}
+{% endif %}
+
 {% unless upcoming_posts == empty %}
     <div class="row t30 b20 homepage">
         <div class="small-12 columns">
