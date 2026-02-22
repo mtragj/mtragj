@@ -16,11 +16,11 @@ widget2:
   title: "Ride with Us!"
   url: 'https://grandvalleydirtbikerally.com'
   image: gvdbr_logo_271_168.png
-  text: '<b>October 16th - 18th, 2025</b><br> The Grand Valley Dirt Bike Rally will return in 2026, put on by the MTRA! We will be offering guided rides in 3 different areas with a variety of lengths and difficulties as well as an event area with exciting activities.'
+  text: '<b>October 16th - 18th, 2026</b><br> The Grand Valley Dirt Bike Rally will return in 2026, put on by the MTRA! We will be offering guided rides in 3 different areas with a variety of lengths and difficulties as well as an event area with exciting activities.'
 #   video: '<a href="#" data-reveal-id="videoModal"><img src="http://phlow.github.io/feeling-responsive/images/start-video-feeling-responsive-302x182.jpg" width="302" height="182" alt=""/></a>'
 widget3:
   title: "Ride with Us!"
-  url: '/rides/'
+  url: '/calendar/'
   image: mtra_motomeetup_270x323.jpg
   text: 'Come ride with us at regulary scheduled meetups where we''ll explore local trails and riding areas and provide the opportunity to meet other local riders.'
 #
