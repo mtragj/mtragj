@@ -71,15 +71,30 @@ format: frontpage
 *
 {% endcomment %}
 
-{% unless site.posts == empty %}
+{% assign all_posts = site.categories.events | concat: site.categories.rides | concat: site.categories.volunteers %}
+{% assign sorted_posts = all_posts | sort: 'date' | reverse %}
+{% assign today = 'now' | date: '%Y-%m-%d' %}
+{% assign upcoming_posts = "" | split: "" %}
+{% for post in sorted_posts %}
+  {% assign post_date = post.date | date: '%Y-%m-%d' %}
+  {% if post_date >= today %}
+    {% assign upcoming_posts = upcoming_posts | push: post %}
+  {% endif %}
+{% endfor %}
+{% assign upcoming_posts = upcoming_posts | reverse %}
+
+{% if upcoming_posts == empty %}
+  {% assign upcoming_posts = sorted_posts | slice: 0, 1 %}
+{% endif %}
+
+{% unless upcoming_posts == empty %}
     <div class="row t30 b20 homepage">
         <div class="small-12 columns">
-            {% for post in site.posts limit:1 %}
+            {% for post in upcoming_posts limit:1 %}
             {% if post.image.homepage %}
             <p>
                 <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape_once }}"><img width="970" src="{{ site.urlimg }}{{ post.image.homepage }}" alt="{{ page.title | escape_once }}"></a>
             </p>
-
             {% if post.image.caption_url and post.image.caption %}
             <p class="text-right caption">
                 <a href="{{ post.image.caption_url }}">{{ post.image.caption }}</a>
@@ -89,13 +104,12 @@ format: frontpage
             <h2>{{ site.data.language.new_blog_entries }}</h2>
             {% endif %}
             {% endfor %}
-        </div><!-- /.small-12.columns -->
-    </div><!-- /.row -->
-
+        </div>
+    </div>
 
     <div class="row">
         <div class="medium-6 columns">
-            {% for post in site.posts limit:1 %}
+            {% for post in upcoming_posts limit:1 %}
             {% if post.subheadline %}<p class="subheadline">{{ post.subheadline }}</p>{% endif %}
             <h2><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
             <p>
@@ -103,14 +117,18 @@ format: frontpage
                 <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="Read {{ post.title | escape_once }}"><strong>{{ site.data.language.read_more }}</strong></a>
             </p>
             {% endfor %}
-        </div><!-- /.medium-5.columns -->
-
+        </div>
 
         <div class="medium-6 columns">
-            <p><strong>{{ site.data.language.more_articles }}</strong></p>
-            {% include list-posts entries='3' offset='1' %}
-        </div><!-- /.medium-7.columns -->
-    </div><!-- /.row -->
+            <p><strong>More Events</strong></p>
+            <ul class="side-nav">
+              {% for post in upcoming_posts limit:3 offset:1 %}
+                <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{% if post.subheadline %}{{ post.subheadline }} &middot; {% endif %}<strong>{{ post.title }}</strong></a></li>
+              {% endfor %}
+                <li class="text-right"><a href="{{ site.url }}{{ site.baseurl }}/calendar/"><strong>{{ site.data.language.more }}</strong></a></li>
+            </ul>
+        </div>
+    </div>
 {% endunless %}
 
 
