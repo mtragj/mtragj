@@ -120,7 +120,7 @@ format: frontpage
         </div>
 
         <div class="medium-6 columns">
-            <p><strong>{{ site.data.language.more_articles }}</strong></p>
+            <p><strong>More Events</strong></p>
             <ul class="side-nav">
               {% for post in upcoming_posts limit:3 offset:1 %}
                 <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{% if post.subheadline %}{{ post.subheadline }} &middot; {% endif %}<strong>{{ post.title }}</strong></a></li>
