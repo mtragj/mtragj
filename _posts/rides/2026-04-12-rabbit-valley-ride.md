@@ -26,4 +26,4 @@ ride:
 ---
 Meet at 9:30a, Kickstands up at 10:00a at the Main Rabbit Valley lot next to the exit.
 
-This will be a fun 40 mile romp through the best of Rabbit Valley including Western Rim with it's epic views and fun obstacles, before wrapping up to the top of the ridge and under the freeway before hitting a fast stretch of trail back to the trucks.
+This will be a fun 40 mile romp through the best of Rabbit Valley including Western Rim with it's epic views and fun obstacles, before wrapping up to the top of the ridge, under the freeway, and hitting a fast stretch of trail back to the trucks.
