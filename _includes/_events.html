@@ -1,42 +1,135 @@
 {% comment %}
-*  This loops through the paginated posts
-*
-*  Total posts: {{ paginator.total_posts }}
-*  Total paginate-pages: {{ paginator.total_pages }}
-*
+Calendar-style card view for events.
+Shows upcoming events first, then past events, grouped by month.
 {% endcomment %}
 
+{% assign sorted_posts = site.categories.events | sort: 'date' | reverse %}
 
-{% for post in site.categories.events %}
-  <div class="row">
-    <div class="small-12 columns b60">
-      <p class="subheadline">{{ post.categories | join: ' &middot; ' | prepend: '<span class="subheader">' | append: '</span>' }}{% if post.categories != empty and post.subheadline != NULL %} – {% endif %}{{ post.subheadline }}</p>
-      <h2><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-      <p>
-        {% if post.image.thumb %}<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape_once }}"><img src="{{ site.urlimg }}{{ post.image.thumb }}" class="alignleft" width="150" height="150" alt="{{ page.title escape_once }}"></a>{% endif %}
+{% assign today = 'now' | date: '%Y-%m-%d' %}
 
-        {% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% elsif post.teaser %}{{ post.teaser | strip_html | escape }}{% endif %}
+{% assign upcoming_posts = "" | split: "" %}
+{% assign past_posts = "" | split: "" %}
 
-        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ site.data.language.read }} {{ post.title | escape_once }}"><strong>{{ site.data.language.read_more }}</strong></a>
-      </p>
-    </div><!-- /.small-12.columns -->
-  </div><!-- /.row -->
+{% for post in sorted_posts %}
+  {% assign post_date = post.date | date: '%Y-%m-%d' %}
+  {% if post_date >= today %}
+    {% assign upcoming_posts = upcoming_posts | push: post %}
+  {% else %}
+    {% assign past_posts = past_posts | push: post %}
+  {% endif %}
 {% endfor %}
 
+{% assign upcoming_posts = upcoming_posts | reverse %}
 
-<!-- <nav id="pagination">
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-      <a rel="prev" class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/" title="{{ site.data.language.previous_posts }}">&laquo; {{ site.data.language.previous_posts }}</a>
-      {% else %}
-      <a rel="prev" class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/page{{ paginator.previous_page }}/" title="{{ site.data.language.previous_posts }}">&laquo; {{ site.data.language.previous }}</a>
-      {% endif %}
+<div class="calendar-container">
+
+  {% if upcoming_posts.size > 0 %}
+    <h2 class="calendar-section-header">Upcoming</h2>
+
+    {% assign displayed_months = "" %}
+
+    {% for post in upcoming_posts %}
+      {% assign post_month_key = post.date | date: '%Y-%m' %}
+      {% assign post_day = post.date | date: '%-d' %}
+
+      {% unless displayed_months contains post_month_key %}
+        {% if displayed_months != "" %}
+          </div><!-- /.calendar-grid -->
+        {% endif %}
+
+        <h3 class="calendar-month-header">{{ post.date | date: '%B %Y' }}</h3>
+        <div class="calendar-grid">
+
+        {% capture displayed_months %}{{ displayed_months }}{{ post_month_key }},{% endcapture %}
+      {% endunless %}
+
+      <div class="calendar-item calendar-event">
+        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+          <div class="calendar-date">
+            <span class="calendar-day">{{ post_day }}</span>
+            <span class="calendar-weekday">{{ post.date | date: '%a' }}</span>
+          </div>
+          <div class="calendar-content">
+            {% if post.image.thumb %}
+              <div class="calendar-thumb">
+                <img src="{{ site.urlimg }}{{ post.image.thumb }}" alt="{{ post.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="calendar-info">
+              <span class="calendar-type-badge calendar-badge-event">Event</span>
+              <h4 class="calendar-title">{{ post.title }}</h4>
+              {% if post.event.when %}
+                <p class="calendar-when">{{ post.event.when }}</p>
+              {% endif %}
+              {% if post.teaser %}
+                <p class="calendar-teaser">{{ post.teaser }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+    {% if displayed_months != "" %}
+      </div><!-- /.calendar-grid -->
     {% endif %}
+  {% else %}
+    <p class="calendar-empty">No upcoming events scheduled. Check back soon!</p>
+  {% endif %}
 
-    <a class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/archive/" title="{{ site.data.language.blog_archive }}">{{ site.data.language.blog_archive }}</a>
+  {% if past_posts.size > 0 %}
+    <h2 class="calendar-section-header calendar-past-header">Past Events</h2>
 
-    {% if paginator.next_page %}
-    <a rel="next" class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/page{{ paginator.next_page }}/" title="{{ site.data.language.next_posts }}">{{ site.data.language.next }} &raquo;</a>
+    {% assign displayed_months = "" %}
+
+    {% for post in past_posts %}
+      {% assign post_month_key = post.date | date: '%Y-%m' %}
+      {% assign post_day = post.date | date: '%-d' %}
+
+      {% unless displayed_months contains post_month_key %}
+        {% if displayed_months != "" %}
+          </div><!-- /.calendar-grid -->
+        {% endif %}
+
+        <h3 class="calendar-month-header">{{ post.date | date: '%B %Y' }}</h3>
+        <div class="calendar-grid">
+
+        {% capture displayed_months %}{{ displayed_months }}{{ post_month_key }},{% endcapture %}
+      {% endunless %}
+
+      <div class="calendar-item calendar-event calendar-past">
+        <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+          <div class="calendar-date">
+            <span class="calendar-day">{{ post_day }}</span>
+            <span class="calendar-weekday">{{ post.date | date: '%a' }}</span>
+          </div>
+          <div class="calendar-content">
+            {% if post.image.thumb %}
+              <div class="calendar-thumb">
+                <img src="{{ site.urlimg }}{{ post.image.thumb }}" alt="{{ post.title | escape }}">
+              </div>
+            {% endif %}
+            <div class="calendar-info">
+              <span class="calendar-type-badge calendar-badge-event">Event</span>
+              <h4 class="calendar-title">{{ post.title }}</h4>
+              {% if post.event.when %}
+                <p class="calendar-when">{{ post.event.when }}</p>
+              {% endif %}
+              {% if post.teaser %}
+                <p class="calendar-teaser">{{ post.teaser }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+    {% if displayed_months != "" %}
+      </div><!-- /.calendar-grid -->
     {% endif %}
-  </nav> -->
+  {% endif %}
 
+  {% if upcoming_posts.size == 0 and past_posts.size == 0 %}
+    <p class="calendar-empty">No events found.</p>
+  {% endif %}
+</div>
