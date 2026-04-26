@@ -26,3 +26,13 @@ volunteer:
 This is for a work party to help Clif Koontz with Ride with Respect organization in Moab paint the lines on a few trails in the White Wash area. We are hoping to find 6 volunteers for this work party (realize it is a drive), need at least 4 to make it work!
 
 Please contact [Clif](mailto:clif@ridewithrespect.org) to confirm if you can make it.
+
+We'll meet somewhere near the kiosk that's above the White Wash sand dunes just off of Ruby Ranch Road, see directions link. Then the hikers will hop in Clif's truck while any (hopefully electric or auto-clutch) motorcyclists can follow my truck for a few miles to Mary's Trail where the painting begins.
+
+Then the hikers will hop in my truck while any (hopefully electric or auto-clutch) motorcyclists can follow my truck for a few miles to Mary's Trail where the painting begins. I think the other info is covered in my March 30th email below but, if anything else is needed, I can reply quickly. 
+
+Lunch will be provided and of course the paint including wands (which the BLM is likely to restock). Volunteers should bring shoes that'll be comfortable to walk several miles of slickrock, at least a couple quarts of water for the morning, and sunscreen since the light reflects off the slickrock (thus a sunhat alone may not be enough).
+
+Normally for a half-day, the northern routes (Mary's, Brian's, part of Red Rocks, and Red Butte) would take two volunteers, but now it could take four volunteers because the paint is almost completely faded. The extra two people could scout ahead on foot or motorcycle, but the painters should be on foot (although a small automatic motorcycle like a Surron might work for the painters). Clif will pick up the foot people after painting so they don't have to backtrack, then drive them back to White Wash so they could ride in the afternoon.
+
+If we get a fifth and sixth volunteer, we could finish the southern route as well (i.e. Cow Freckles Trail) since its paint isn't completely faded.
