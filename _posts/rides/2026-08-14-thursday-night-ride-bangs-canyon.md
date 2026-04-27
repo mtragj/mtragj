@@ -19,9 +19,11 @@ ride:
     where: Bangs Canyon Trailhead
     leader: Stephan Kauffmann
     difficulty: Intermediate
-    distance: 25-40 miles
+    distance: 20-25 miles
     pace: Moderate
-    terrain: Mostly double-track, possibly some 50". Still be prepared for baby heads, steep sections, and small ledges.
+    terrain: All Double Track. Still be prepared for baby heads, steep sections, and small ledges.
     directions: https://www.google.com/maps/place/Bangs+Canyon+Trailhead+(Mica+Mine)/@38.9887497,-108.6172874,374m/data=!3m1!1e3!4m6!3m5!1s0x87471acd5672f0a9:0xe3c22c332cd7614f!8m2!3d38.9887574!4d-108.6171538!16s%2Fg%2F11b7hm_319?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D
 ---
 Take an evening cruise through the Bangs Canyon area, this ride will stay mostly on double track with potentially some 50 inch trail thrown in to make a loop. It will still be intermediate technically however with steep sections, baby heads, and some small ledges to negotiate.
+
+**Headlights and/or helmet lights are highly reccommended, in case of any delays the ride may not get back to the Trailhead until dusk.**
