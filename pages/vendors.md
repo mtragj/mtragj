@@ -43,3 +43,10 @@ permalink: "/vendors/"
     </div><!-- /.medium-4.columns -->
 </div><!-- /.row -->
 
+<div class="row t30">
+    <div class="medium-4 columns">
+        <a href="https://tow-whee.com/"><img src="{{ site.urlimg }}tow_whee_logo.png" alt=""></a>
+        <p><a href="https://tow-whee.com/">Tow-Whee Adventure Tow Bungee</a></p>
+    </div><!-- /.medium-4.columns -->
+</div><!-- /.row -->
+
