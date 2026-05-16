@@ -6,9 +6,9 @@ teaser: "A low-poly 3D dirt bike riding game built by one of our members. Thrott
 permalink: "/game/"
 ---
 
-<a class="radius button" href="{{ site.baseurl }}/dirt-bike-game/">Play the Dirt Bike Game</a>
+<a class="radius button" href="{{ site.url }}{{ site.baseurl }}/dirt-bike-game/">Play the Dirt Bike Game</a>
 
-[![Dirt Bike Game screenshot]({{ site.urlimg }}dirt_bike_game.png)]({{ site.baseurl }}/dirt-bike-game/)
+[![Dirt Bike Game screenshot]({{ site.urlimg }}dirt_bike_game.png)]({{ site.url }}{{ site.baseurl }}/dirt-bike-game/)
 
 ## About
 
