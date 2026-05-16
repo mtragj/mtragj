@@ -33,6 +33,10 @@
   url: "/vendors/"
   side: left
 
+- title: Game
+  url: "/game/"
+  side: left
+
 # - title: "Templates"
 #   url: "/design/"
 #   side: left

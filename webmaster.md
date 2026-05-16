@@ -26,7 +26,8 @@ touch ~/.asdfrc
 legacy_version_file = yes
 
 # Clone the mtra git project and chdir
-git clone git@github.com:mtragj/mtragj.git
+# Use --recurse-submodules so the dirt-bike-game submodule is checked out too
+git clone --recurse-submodules git@github.com:mtragj/mtragj.git
 cd mtragj
 
 # Install Ruby and gems
@@ -39,3 +40,20 @@ bundle install
   * output will include a local URL to copy into your browser. E.G. `http://127.0.0.1:4000/mtra/`
   * For most content updates the site will auto-regenerate when you edit a file
   * For more substantial changes (coding/templates) you may want to ctrl-c the exec command restart the local server with the above command
+
+## Submodules
+
+The dirt bike game lives in its own repo and is pulled in as a git submodule at `dirt-bike-game/`. GitHub Pages clones it automatically during the site build.
+
+* If you cloned without `--recurse-submodules`, initialize the submodule once:
+  ```bash
+  git submodule update --init
+  ```
+* To pull in newer commits from the game repo (after the game has been updated):
+  ```bash
+  git submodule update --remote dirt-bike-game
+  git add dirt-bike-game
+  git commit -m "bump dirt-bike-game submodule"
+  ```
+  The bumped pointer is what triggers the new game version on the live site.
+* After pulling mtragj changes that updated the submodule pointer, run `git submodule update` to sync your local checkout.
