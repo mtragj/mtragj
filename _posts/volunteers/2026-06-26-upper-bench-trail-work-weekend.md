@@ -1,7 +1,7 @@
 ---
 layout: volunteer
 sidebar: right
-subheadline: "Repairing North Unc Trrail"
+subheadline: "Repairing North Unc Trail"
 title: "Upper Bench Trail Work weekend"
 teaser: "Rebuild Upper Bench and harden mud-holes, a project started in 2024!"
 breadcrumb: true
