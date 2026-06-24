@@ -12,10 +12,8 @@
 # An absolute URL (containing "://") is used as-is. A root-relative path
 # (e.g. /volunteers/...) gets site.url + site.baseurl prepended, matching how
 # the rest of the site links to posts ({{ site.url }}{{ site.baseurl }}{{ post.url }}).
-# This is required because the site is served at the apex domain root via a
-# custom domain (mtragj.org), while baseurl is /mtragj: a root-relative
-# /mtragj/... path 404s on the apex, but the full github.io/mtragj/... URL
-# 301-redirects to the correct apex path the same way every other link does.
+# The site is served at the apex domain root (mtragj.org) with an empty
+# baseurl, so this yields a direct https://mtragj.org/... target.
 ---
 {% if page.redirect_to contains '://' %}{% assign redirect_target = page.redirect_to %}{% else %}{% assign redirect_target = page.redirect_to | prepend: site.baseurl | prepend: site.url %}{% endif %}
 <!DOCTYPE html>
