@@ -2,7 +2,7 @@
 layout: ride
 sidebar: right
 subheadline: "Come ride the open desert with us!"
-title: "Thursday Night Ride - Desert"
+title: "Cancelled: Thursday Night Ride - Desert"
 teaser: "Hills, washes, and open desert riding."
 breadcrumb: true
 tags:
@@ -11,9 +11,9 @@ categories:
     - rides
 show_meta: false
 image:
-    thumb: thursday-night-ride-desert-june-2026-300x225.jpg
-    homepage: thursday-night-ride-desert-june-2026-1024x768.jpg
-    title: thursday-night-ride-desert-june-2026-1024x768.jpg
+    thumb: thursday-night-ride-desert-june-2026-cancelled-300x225.jpg
+    homepage: thursday-night-ride-desert-june-2026-cancelled-1024x768.jpg
+    title: thursday-night-ride-desert-june-2026-cancelled-1024x768.jpg
 ride:
     when: 6:30p June 25th, 2026
     where: 27 1/4 road Motocross Track
@@ -24,4 +24,6 @@ ride:
     terrain: Hills, washes, desert single-track
     directions: https://maps.app.goo.gl/Qt9DQ4ve1pixRvS5A
 ---
+**This ride is cancelled.** 100 degree heat and smokey conditions make it unsafe to host a desert ride this week. Check back for the next one!
+
 Explore the Grand Valley Desert on a brisk evening ride sure to include some hills, ridges, washes and single-track.
