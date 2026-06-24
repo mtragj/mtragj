@@ -35,7 +35,7 @@ widget3:
 #
 callforaction:
   url: https://forms.gle/tA77sVKiLEMGxnZ76
-  text: Become a member of the MTRA ›
+  text: Join or Renew Your Membership ›
   style: alert
 permalink: /index.html
 #

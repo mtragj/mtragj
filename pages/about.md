@@ -25,7 +25,7 @@ Motorcycle Trail Riding Association (MTRA) is a 501 ©  3 nonprofit organization
 MTRA strives to keep all public lands in Western Colorado open to responsible, respectful recreational usage by interactive cooperation with local, State and Federal agencies and other user groups.  Through a combination of volunteer labor, rider/public education and local involvement, MTRA works to advocate for, develop, build, and maintain dedicated single-track trails to ensure the continued success and growth of our sport.
 </p>
 
-<a class="radius button small" href="https://forms.gle/tA77sVKiLEMGxnZ76">Become a member of the MTRA</a>
+<a class="radius button small" href="https://forms.gle/tA77sVKiLEMGxnZ76">Join or Renew Your Membership</a>
 
  [1]: {{ site.url }}{{ site.baseurl }}/documentation/
 
