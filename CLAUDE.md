@@ -166,14 +166,28 @@ appears in `site.categories.*` listings or the calendar):
    ---
    ```
    - `permalink` and `redirect_to` are root-relative paths **without** the
-     baseurl; `_layouts/redirect.html` prepends `site.baseurl` automatically
-     (absolute `http(s)://` URLs are passed through as-is).
+     baseurl. `_layouts/redirect.html` prepends `site.url` + `site.baseurl` to
+     produce a full URL (`https://mtragj.github.io/mtragj/...`), matching how the
+     rest of the site links to posts. Absolute `http(s)://` URLs are passed
+     through as-is.
+   - **Why the full URL and not just a root-relative path:** the live site is
+     served at the apex domain root via custom domain (`mtragj.org`), but
+     `baseurl` is `/mtragj`. A root-relative `/mtragj/...` target 404s on the
+     apex (there's no `/mtragj/` prefix there), whereas the full
+     `github.io/mtragj/...` URL 301-redirects to the correct apex path. Do **not**
+     use the `relative_url` filter here — it only prepends baseurl and produces
+     the broken `/mtragj/...` form.
    - Add one stub per old URL. If a post's date changes more than once, chain or
      repoint stubs so every previously-shared URL still resolves.
-3. **Verify with a build** (`bundle exec jekyll build --config _config.yml,_config_dev.yml`):
-   the old URL's `index.html` should `<meta refresh>` to the new path, the new
-   URL should appear in the volunteer/calendar/frontpage listings, and the old
-   URL should appear in *neither* the listings nor `_site/sitemap.xml`.
+3. **Verify with a production build** (`bundle exec jekyll build --config _config.yml`):
+   the old URL's `index.html` should `<meta refresh>` to the *full*
+   `https://mtragj.github.io/mtragj/.../` target (identical to how a listing
+   links to the post — compare `_site/volunteer/index.html`). The new URL should
+   appear in the volunteer/calendar/frontpage listings, and the old URL should
+   appear in *neither* the listings nor `_site/sitemap.xml`. Optionally confirm
+   the target resolves live with
+   `curl -s -o /dev/null -w "%{http_code} -> %{redirect_url}\n" <target>`
+   (expect `301 -> https://mtragj.org/...`).
 
 ## Git Workflow
 
