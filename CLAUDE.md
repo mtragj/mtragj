@@ -138,6 +138,43 @@ Two types of includes:
 1. **Template includes** (prefixed with `_`): Used by layouts (e.g., `_head.html`, `_footer.html`)
 2. **Content commands** (no prefix): Usable in posts/pages (e.g., `alert`, `gallery`)
 
+## Changing the Date of an Existing Event/Ride/Volunteer Post
+
+Post URLs are derived from the date in the filename (permalink is
+`/:categories/:year/:month/:day/:title/`). If an event's date changes, simply
+renaming the file moves the URL and **breaks any links already shared** (404s),
+but leaving the old filename makes the post sort/display under the wrong date.
+
+Do both cleanly with the theme's built-in `redirect` layout (no plugins, no
+"ignore this file" hacks — a redirect stub is a *page*, not a post, so it never
+appears in `site.categories.*` listings or the calendar):
+
+1. **Rename the post file** to the new start date (e.g.
+   `_posts/volunteers/2026-06-26-foo.md` → `2026-06-27-foo.md`) and update the
+   `when:` field and body text to the new date(s). Use `git mv`.
+2. **Create a redirect stub** at `pages/redirects/<slug>-<old-date>.md` pointing
+   the old URL at the new one:
+   ```yaml
+   ---
+   title: "<Title> (moved)"
+   layout: redirect
+   sitemap:
+       exclude: true        # NOTE: the theme's sitemap include checks
+                            # `sitemap.exclude`, NOT `sitemap: false`
+   permalink: /volunteers/2026/06/26/foo/   # OLD url path (no baseurl)
+   redirect_to: /volunteers/2026/06/27/foo/ # NEW url path (no baseurl)
+   ---
+   ```
+   - `permalink` and `redirect_to` are root-relative paths **without** the
+     baseurl; `_layouts/redirect.html` prepends `site.baseurl` automatically
+     (absolute `http(s)://` URLs are passed through as-is).
+   - Add one stub per old URL. If a post's date changes more than once, chain or
+     repoint stubs so every previously-shared URL still resolves.
+3. **Verify with a build** (`bundle exec jekyll build --config _config.yml,_config_dev.yml`):
+   the old URL's `index.html` should `<meta refresh>` to the new path, the new
+   URL should appear in the volunteer/calendar/frontpage listings, and the old
+   URL should appear in *neither* the listings nor `_site/sitemap.xml`.
+
 ## Git Workflow
 
 - **Main branch**: `gh-pages` (used for GitHub Pages deployment and PRs)
