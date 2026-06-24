@@ -26,6 +26,23 @@ bundle exec jekyll serve --future
 bundle install
 ```
 
+## Content Quick-Reference
+
+For routine content edits, jump straight to the file instead of searching:
+
+- **Post location/pattern:** `_posts/<category>/YYYY-MM-DD-slug.md`, where
+  `<category>` is `events`, `rides`, `volunteers`, or `news`. The filename date
+  drives the post URL (`/:categories/:year/:month/:day/:title/`).
+- **Images:** slug-based names in `images/`, two sizes per post —
+  `<slug>-1024x768.jpg` (homepage/title) and `<slug>-300x225.jpg` (thumb),
+  referenced in front matter and via `{{ site.urlimg }}`. Resize with
+  ImageMagick `convert ... -resize WxH^ -gravity center -extent WxH`.
+- **Verification altitude:** for simple content/copy edits (text, front-matter
+  field tweaks, image swaps), the PR diff is the verification — do **not** run a
+  local production build. Only build locally (`bundle exec jekyll build`) for
+  changes touching layouts, `_config.yml`, the deploy workflow, URLs/permalinks,
+  redirects, or assets, where the rendered output can actually break.
+
 ## Site Architecture
 
 ### Configuration
