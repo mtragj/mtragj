@@ -11,17 +11,17 @@ categories:
     - volunteers
 show_meta: false
 image:
-    thumb: upper-bench-trail-work-weekend-300x225.jpg
-    homepage: upper-bench-trail-work-weekend-1024x768.jpg
-    title: upper-bench-trail-work-weekend-1024x768.jpg
+    thumb: upper-bench-trail-work-july-2026-300x225.jpg
+    homepage: upper-bench-trail-work-july-2026-1024x768.jpg
+    title: upper-bench-trail-work-july-2026-1024x768.jpg
 volunteer:
     when: 9:00a July 18th, 2026
-    where: Divide Road
+    where: Divide Road and W Campbell Rd
     leader: Jacob Gillette
     work: Trail bridges, tread repair.
     access: Ride In
     bring: Tools and saws if you have them
-    directions: https://www.google.com/maps/place/38%C2%B033'07.9%22N+108%C2%B038'45.1%22W/@38.552191,-108.645851,1382m/
+    directions: https://www.google.com/maps/place/38%C2%B033'07.9%22N+108%C2%B038'45.1%22W/@38.4873769,-108.5774847,170m/
 ---
 Work on Upper Bench Trail #625  -  Multiple Mud Holes need hardening (8+)- some over 30 feet.
 Potential options to harden include rock and logs, and may need re-routing.  Puncheon bridges may be needed as well.  Access to the work site will require riding in for a few miles.  Meet-up at 9am, July 18 at the intersection of Divide Road and FR 411.  
