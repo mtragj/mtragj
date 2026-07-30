@@ -2,7 +2,7 @@
 layout: ride
 sidebar: right
 subheadline: "Come ride the Bangs Canyon Area after work"
-title: "Thursday Night Ride - Bangs Canyon"
+title: "Friday Night Ride - Bangs Canyon"
 teaser: "Take a tour of some of the double track in the bangs canyon area and some of the \"easier\" 50 inch trails."
 breadcrumb: true
 tags:
@@ -25,5 +25,7 @@ ride:
     directions: https://www.google.com/maps/place/Bangs+Canyon+Trailhead+(Mica+Mine)/@38.9887497,-108.6172874,374m/data=!3m1!1e3!4m6!3m5!1s0x87471acd5672f0a9:0xe3c22c332cd7614f!8m2!3d38.9887574!4d-108.6171538!16s%2Fg%2F11b7hm_319?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D
 ---
 Take an evening cruise through the Bangs Canyon area, this ride will stay on double track making a large loop. It will still be intermediate technically however with steep sections, baby heads, and some small ledges to negotiate.
+
+Meeting time is 6:00p, with kickstands up promptly at 6:30p!
 
 **Headlights and/or helmet lights are highly reccommended, in case of any delays the ride may not get back to the Trailhead until dusk.**
