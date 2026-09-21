@@ -21,7 +21,7 @@ volunteer:
     work: Picking up Trash left in the desert
     access: Drive In
     bring: Thick Gloves, sturdy shoes/boots, extra water
-    directions: https://maps.app.goo.gl/Qt9DQ4ve1pixRvS5A
+    directions: https://www.google.com/maps/place/Grand+Valley+OHV+Recreation+Area/@39.1614355,-108.5346421,1151m
 ---
 Meet at the 27 and 1/4 moto track event area. Trash bags will be provided along with dumpsters. Show up ready to help remove trash from our desert playground!
 

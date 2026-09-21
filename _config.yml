@@ -78,6 +78,7 @@ exclude:
     - LICENSE
     - README.md
     - INSTALL.md
+    - ToDo.md
     - vendor
 
 

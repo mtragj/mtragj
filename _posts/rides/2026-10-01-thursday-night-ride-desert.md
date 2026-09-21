@@ -22,6 +22,6 @@ ride:
     distance: 20 - 30 miles
     pace: Moderate
     terrain: Hills, washes, desert single-track
-    directions: https://maps.app.goo.gl/Qt9DQ4ve1pixRvS5A
+    directions: https://www.google.com/maps/place/Grand+Valley+OHV+Recreation+Area/@39.1614355,-108.5346421,1151m
 ---
 Explore the Grand Valley Desert on a brisk evening ride sure to include some hills, ridges, washes and single-track.
