@@ -2,39 +2,20 @@
   url: "/"
   side: left
 
-- title: About the MTRA
-  url: "/about/"
-  side: left
-
-- title: Events
-  url: "/events/"
-  side: left
-
 - title: Calendar
   url: "/calendar/"
   side: left
-
-- title: Volunteer
-  url: "/volunteer/"
-  side: left
-  dropdown:
-  - title: "Log Hours"
-    url: "https://docs.google.com/forms/d/e/1FAIpQLSfBN1EGAMGyWHngUZq7tal2EMLzIZejNiEJyKooNXWaymBXGw/viewform"  
 
 - title: News
   url: "/news/"
   side: left
 
-- title: Rides
-  url: "/rides/"
-  side: left  
-
 - title: Vendors
   url: "/vendors/"
   side: left
 
-- title: Game
-  url: "/game/"
+- title: About
+  url: "/about/"
   side: left
 
 # - title: "Templates"

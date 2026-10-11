@@ -255,3 +255,99 @@
     height: 120px;
   }
 }
+
+/* Category filter links
+------------------------------------------------------------------- */
+
+.calendar-container [hidden] {
+  display: none !important;
+}
+
+.calendar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.calendar-filter {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 2px solid $grey-4;
+  border-radius: 20px;
+  font-size: rem-calc(14);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $grey-8;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &.is-active {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: #fff;
+  }
+
+  &.calendar-filter-event.is-active {
+    background: $ci-2;
+    border-color: $ci-2;
+  }
+
+  &.calendar-filter-ride.is-active {
+    background: $ci-6;
+    border-color: $ci-6;
+  }
+
+  &.calendar-filter-volunteer.is-active {
+    background: $ci-4;
+    border-color: $ci-4;
+  }
+}
+
+/* Previous-years archive links
+------------------------------------------------------------------- */
+
+.calendar-archive {
+  margin-top: 50px;
+}
+
+.calendar-archive-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a,
+  span {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 2px solid $grey-4;
+    border-radius: 20px;
+    font-size: rem-calc(14);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  a {
+    color: $grey-8;
+
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  span {
+    background: $grey-2;
+    color: $grey-6;
+  }
+}

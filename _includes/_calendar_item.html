@@ -1,0 +1,53 @@
+{% comment %}
+Single calendar card. Params: post, past (optional, true for past items).
+data-type holds the post's category (events|rides|volunteers) for the filter links.
+{% endcomment %}
+{% assign post = include.post %}
+
+{% if post.categories contains 'events' %}
+  {% assign post_type = 'event' %}
+  {% assign type_label = 'Event' %}
+  {% assign filter_type = 'events' %}
+{% elsif post.categories contains 'rides' %}
+  {% assign post_type = 'ride' %}
+  {% assign type_label = 'Ride' %}
+  {% assign filter_type = 'rides' %}
+{% elsif post.categories contains 'volunteers' %}
+  {% assign post_type = 'volunteer' %}
+  {% assign type_label = 'Volunteer' %}
+  {% assign filter_type = 'volunteers' %}
+{% else %}
+  {% assign post_type = 'other' %}
+  {% assign type_label = 'Post' %}
+  {% assign filter_type = 'other' %}
+{% endif %}
+
+<div class="calendar-item calendar-{{ post_type }}{% if include.past %} calendar-past{% endif %}" data-type="{{ filter_type }}">
+  <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">
+    <div class="calendar-date">
+      <span class="calendar-day">{{ post.date | date: '%-d' }}</span>
+      <span class="calendar-weekday">{{ post.date | date: '%a' }}</span>
+    </div>
+    <div class="calendar-content">
+      {% if post.image.thumb %}
+        <div class="calendar-thumb">
+          <img src="{{ site.urlimg }}{{ post.image.thumb }}" alt="{{ post.title | escape }}">
+        </div>
+      {% endif %}
+      <div class="calendar-info">
+        <span class="calendar-type-badge calendar-badge-{{ post_type }}">{{ type_label }}</span>
+        <h4 class="calendar-title">{{ post.title }}</h4>
+        {% if post.event.when %}
+          <p class="calendar-when">{{ post.event.when }}</p>
+        {% elsif post.ride.when %}
+          <p class="calendar-when">{{ post.ride.when }}</p>
+        {% elsif post.volunteer.when %}
+          <p class="calendar-when">{{ post.volunteer.when }}</p>
+        {% endif %}
+        {% if post.teaser %}
+          <p class="calendar-teaser">{{ post.teaser }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>

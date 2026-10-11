@@ -1,0 +1,27 @@
+{% comment %}
+One calendar section (Upcoming / Past) grouped by month.
+Params: posts, heading, past (optional).
+{% endcomment %}
+<section class="calendar-section">
+  <h2 class="calendar-section-header{% if include.past %} calendar-past-header{% endif %}">{{ include.heading }}</h2>
+
+  {% assign displayed_months = "" %}
+  {% for post in include.posts %}
+    {% assign post_month_key = post.date | date: '%Y-%m' %}
+
+    {% unless displayed_months contains post_month_key %}
+      {% if displayed_months != "" %}
+        </div></div><!-- /.calendar-grid /.calendar-month -->
+      {% endif %}
+      <div class="calendar-month">
+      <h3 class="calendar-month-header">{{ post.date | date: '%B %Y' }}</h3>
+      <div class="calendar-grid">
+      {% capture displayed_months %}{{ displayed_months }}{{ post_month_key }},{% endcapture %}
+    {% endunless %}
+
+    {% include _calendar_item.html post=post past=include.past %}
+  {% endfor %}
+  {% if displayed_months != "" %}
+    </div></div><!-- /.calendar-grid /.calendar-month -->
+  {% endif %}
+</section>
