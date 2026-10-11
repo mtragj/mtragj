@@ -68,10 +68,19 @@ The site uses Jekyll's category-based content system with custom layouts for dif
 - `volunteer.html`: For volunteer opportunities with work type/access/bring fields
 - `frontpage.html`: Homepage with widget system and latest post display
 
-**List Pages** (using includes):
-- Events list uses `_includes/_events.html` (loops through `site.categories.events`)
-- Rides list uses `_includes/_rides.html` (loops through `site.categories.rides`)
-- Volunteers list uses `_includes/_volunteers.html` (loops through `site.categories.volunteers`)
+**Calendar** (`/calendar/`) is the single listing for events, rides, and volunteer posts:
+- `_includes/_calendar.html` merges the three categories, splits upcoming/past, and renders the
+  filter links (`#all`, `#events`, `#rides`, `#volunteers`) plus the small client-side filter script.
+- `_includes/_calendar_section.html` (month grouping) and `_includes/_calendar_item.html` (one card,
+  carries `data-type` used by the filter).
+- The old `/events/`, `/rides/`, `/volunteer/` list pages are gone; redirect stubs in
+  `pages/redirects/*-index.md` send them to `/calendar/#<category>`.
+- **Archive:** `/calendar/` shows upcoming items plus past items from the *current* year only. Earlier
+  years get auto-generated pages at `/calendar/<year>/` (`_plugins/calendar_archive.rb`, which also sets
+  `site.calendar_archive_years`), linked under "Previous Years" at the bottom of every calendar page.
+  No manual step at new year: the nightly rebuild rolls the year over. Archive pages reuse the
+  `calendar` layout with `archive_year` set. Note the current year is the *build* date's year.
+- `_includes/_events.html` is only kept for the `/blog/` theme demo page.
 
 ### Front Matter Structure
 
@@ -147,7 +156,11 @@ Standard image sizes:
 Navigation is defined in `_data/navigation.yml` with support for:
 - Left-side menu items (main navigation)
 - Right-side menu items (contact, etc.)
-- Dropdown menus (see Volunteer menu with "Log Hours" external link)
+- Dropdown menus (supported by the theme; none currently in use)
+
+**Hidden pages:** The Dirt Bike Game (`pages/game.md` at `/game/`, game itself at `/dirt-bike-game/`)
+is still in the repo and still builds/serves, but its top-nav link was removed from
+`_data/navigation.yml`. It is just hidden for now; re-add a nav entry (`url: "/game/"`) to bring it back.
 
 ### Includes System
 
