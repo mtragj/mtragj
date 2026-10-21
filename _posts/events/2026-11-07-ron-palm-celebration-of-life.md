@@ -19,7 +19,7 @@ event:
     where: Clarion Inn Grand Junction Airport, 755 Horizon Drive, Grand Junction
     what: Celebration of Life for Ron Palm
     who: Family, friends, and the riding community
-    directions: https://www.google.com/maps/search/?api=1&query=Clarion+Inn+Grand+Junction+Airport+755+Horizon+Dr+Grand+Junction+CO+81506
+    directions: https://www.google.com/maps/place/Clarion+Inn+Grand+Junction/@39.1136599,-108.5387645,17z
 ---
 The MTRA family is saddened by the loss of Ron Palm, a past president of MTRA and a longtime, active member and rider. Ron passed away on October 2nd while doing what he loved, riding in the desert near 18 Road. He gave generously of his time to MTRA and to the Western Slope riding community, and he will be greatly missed.
 
