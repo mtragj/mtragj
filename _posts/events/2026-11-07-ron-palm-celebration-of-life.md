@@ -26,3 +26,5 @@ The MTRA family is saddened by the loss of Ron Palm, a past president of MTRA an
 Ron's family invites everyone who knew him to a Celebration of Life from 2:00 to 4:00pm on Saturday, November 7th, at the Clarion Inn Grand Junction Airport, 755 Horizon Drive.
 
 Ron loved bright colors, so please wear your favorite off-road jersey, the brighter the better.
+
+Read more about Ron's life in his [obituary](https://www.brownscremationservice.com/obituaries/ronald-palm).
