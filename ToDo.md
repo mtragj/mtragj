@@ -25,3 +25,22 @@ links for `directions:` without affecting the map preview.
 - Backfill existing posts that use `maps.app.goo.gl` short links
   (`grep -l "maps.app.goo.gl" _posts/*/*`).
 - Verify with a local production build since it touches includes.
+
+## Move the site build from Ruby 3.1 to Ruby 3.3
+
+**Problem:** Ruby 3.1 is end-of-life. The `ubuntu-latest` runners moved to
+Ubuntu 26.04, and `ruby/ruby-builder` publishes 26.04 builds for 3.1.7 and
+3.3.x but *not* 3.2.x, so 3.3 is the next supported step. Eventually 3.1 builds
+will stop appearing for new runner images and the nightly rebuild will break
+again.
+
+**To do:**
+
+- Change `ruby-version` in `.github/workflows/jekyll.yml` and
+  `.github/workflows/pr-build-test.yml` from `'3.1'` to `'3.3'`.
+- Update `.ruby-version` (currently `3.1.4`) to a 3.3.x release.
+- Run `bundle update` as needed and commit the refreshed `Gemfile.lock`
+  (check the pinned `asciidoctor ~> 1.5.4` and `coderay 1.1.1` still work).
+- Verify with a local production build (`bundle exec jekyll build`) and the
+  PR "Test Jekyll Build" check, then trigger the nightly workflow once via
+  `workflow_dispatch` to confirm the deploy.
